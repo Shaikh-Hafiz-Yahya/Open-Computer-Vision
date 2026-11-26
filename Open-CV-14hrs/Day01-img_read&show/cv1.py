@@ -1,25 +1,16 @@
 import cv2
-from pathlib import Path
 
-# Get current Python file directory
-BASE_DIR = Path(__file__).resolve().parent
+img_read1 = cv2.imread(r"C:\Users\Muhammad Yahya\Downloads\Computer_Vision\Open-Computer-Vision\Open-CV-14hrs\images\fruits.jpg")
+img_read2 = cv2.imread(r"C:\Users\Muhammad Yahya\Downloads\Computer_Vision\Open-Computer-Vision\Open-CV-14hrs\images\smarties.png")
 
-# Image path
-image_path = BASE_DIR / "images" / "fruits.jpg"
+cv2.imshow("fresh fruits" , img_read1)
+cv2.imshow("candies" , img_read2)
 
-# Read image
-img = cv2.imread(str(image_path))
+cv2.waitKey(0)
 
-if img is not None:
+cv2.destroyAllWindows() #close all windows from backend
 
-    cv2.imshow("Displaying Image", img) # open the window
-
-    cv2.waitKey(0) # ZERO = Hold Kro display image (press any key)
-
-    cv2.destroyAllWindows() # backend sy image ko successfully remove (close the all windows)
-
-else:
-    print("Image Does Not Exist..")
+cv2.destroyWindow("smarties.png") #close particular window from backend  
 
 
 # 5. Important Computer Vision Concepts.
@@ -30,4 +21,3 @@ else:
 # cv2.imshow()	            Image display karta hai
 # cv2.waitKey(0)	        Key press ka wait karta hai
 # cv2.destroyAllWindows()	OpenCV ki windows close karta hai
-# Path(__file__)	        Current Python file ka location deta hai
